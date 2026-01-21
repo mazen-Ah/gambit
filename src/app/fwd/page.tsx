@@ -1,0 +1,59 @@
+import ComponentRenderer from "@/src/app/utils/ComponentRenderer";
+import PerPageLayout from "../PerPageLayout";
+import FwdPageWrapper from "./FwdPageWrapper";
+import { fetchPageData } from "@/src/services/services_page";
+
+interface Section {
+  section_type: string;
+  data?: Record<string, unknown>;
+}
+
+// Fallback sections if API fails
+const fallbackSections: Section[] = [
+  { section_type: "fwd_hero", data: {} },
+  { section_type: "fwd_section", data: {} },
+  { section_type: "fwd_players", data: {} },
+  { section_type: "fwd_awards", data: {} },
+  {
+    section_type: "about_get_in_touch",
+    data: { srcImage: "", text: "", title: "", description: "" },
+  },
+];
+
+export default async function Page() {
+  const pageData = await fetchPageData("fwd", 0);
+
+  const sections: Section[] = pageData?.sections
+    ?.filter((s: any) => !s.disabled)
+    .map((s: any) => {
+      const sectionName = (s.name?.en || s.name || '').replace(/-/g, '_');
+      const sectionNameMap: Record<string, string> = {
+        'fwd_hero': 'fwd_hero',
+        'fwd_section': 'fwd_section',
+        'fwd_players': 'fwd_players',
+        'fwd_awards': 'fwd_awards',
+        'get_in_touch': 'about_get_in_touch',
+      };
+      const mappedName = sectionNameMap[sectionName] || sectionName;
+      return {
+        section_type: mappedName,
+        data: s,
+      };
+    })
+    .filter((s: Section) => s.section_type) || fallbackSections;
+
+  return (
+    <>
+      <FwdPageWrapper />
+      <PerPageLayout>
+        {sections.map((section, index) => (
+          <ComponentRenderer
+            key={`${section.section_type}-${index}`}
+            name={section.section_type}
+            data={section.data}
+          />
+        ))}
+      </PerPageLayout>
+    </>
+  );
+}

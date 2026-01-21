@@ -1,0 +1,23 @@
+.face.front {
+  backface-visibility: hidden;
+  mix-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.face.back {
+  transform: rotateX(180deg);
+  backface-visibility: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.dv_block_set {
+  .dv_bg {
+    transition: transform 4s linear;
+  }
+
+  &:hover .dv_bg {
+    transform: scale(1.2);
+  }
+}

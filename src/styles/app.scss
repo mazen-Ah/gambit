@@ -1,0 +1,523 @@
+@use "./responsiveFonts.scss" as *;
+@use "../components/pages/homePage/teamSection/style/Team.scss";
+@use "../components/pages/homePage/divisionsSection/DivisionCard.scss";
+@use "../components/pages/about-us/story/style/StorySection.scss";
+
+html {
+  &.is-mobile {
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+
+    body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #smooth-container {
+      position: relative;
+      height: 100svh;
+
+      overflow-y: scroll;
+      overscroll-behavior: none;
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+.space-x {
+  padding-inline: 5rem;
+}
+
+.space-x-start {
+  padding-inline-start: 5rem;
+}
+
+.space-x-end {
+  padding-inline-end: 5rem;
+}
+
+.space-y {
+  padding-block: 7.5rem;
+
+  &.big {
+    padding-block: 15rem;
+  }
+
+  &.mid {
+    padding-block: 10rem;
+  }
+
+  &.small {
+    padding-block: 2.25rem;
+  }
+}
+
+.space-y-top {
+  padding-top: 7.5rem;
+
+  &.big {
+    padding-top: 15rem;
+  }
+
+  &.mid {
+    padding-top: 10rem;
+  }
+
+  &.small {
+    padding-top: 2.25rem;
+  }
+}
+
+.space-y-bottom {
+  padding-bottom: 7.5rem;
+
+  &.big {
+    padding-bottom: 15rem;
+  }
+
+  &.mid {
+    padding-bottom: 10rem;
+  }
+
+  &.small {
+    padding-bottom: 2.25rem;
+  }
+}
+
+.space-top-big {
+  padding-top: 9rem;
+}
+
+.space-bottom-big {
+  padding-bottom: 9rem;
+}
+
+.flickity-carousel .flickity-slider > * {
+  margin-right: 20px;
+}
+
+@media (max-width: 600px) {
+  .space-x {
+    padding-inline: 2rem;
+  }
+
+  .space-x-start {
+    padding-inline-start: 2rem;
+  }
+
+  .space-x-end {
+    padding-inline-end: 2rem;
+  }
+
+  .space-y {
+    padding-block: 3.75rem;
+
+    &.big {
+      padding-block: 7.5rem;
+    }
+
+    &.mid {
+      padding-block: 5rem;
+    }
+
+    &.small {
+      padding-block: 1.125rem;
+    }
+  }
+
+  .space-y-top {
+    padding-top: 3.75rem;
+
+    &.big {
+      padding-top: 7.5rem;
+    }
+
+    &.mid {
+      padding-top: 5rem;
+    }
+
+    &.small {
+      padding-top: 1.125rem;
+    }
+  }
+
+  .space-y-bottom {
+    padding-bottom: 3.75rem;
+
+    &.big {
+      padding-bottom: 7.5rem;
+    }
+
+    &.mid {
+      padding-bottom: 5rem;
+    }
+
+    &.small {
+      padding-bottom: 1.125rem;
+    }
+  }
+
+  .space-top-big {
+    padding-top: 4.5rem;
+  }
+
+  .space-bottom-big {
+    padding-bottom: 4.5rem;
+  }
+
+  .space-top-big {
+    padding-top: 5rem;
+  }
+
+  .space-bottom-big {
+    padding-bottom: 5rem;
+  }
+
+  .flickity-carousel .flickity-slider > * {
+    margin-right: 1.25em !important;
+  }
+}
+// .flickity-carousel .flickity-slider>*:first-child {
+//   padding-left: 2rem;
+// }
+// .flickity-carousel .flickity-slider>*:last-child {
+//   padding-right: 2rem;
+// }
+// }
+
+// .flickity-carousel .flickity-slider>*:first-child {
+//   padding-left: 5rem;
+// }
+// .flickity-carousel .flickity-slider>*:last-child {
+//   padding-right: 5rem;
+// }
+
+.flickity-carousel .flickity-viewport {
+  // left: -63.5rem !important;
+  // right: -63.5rem !important;
+  overflow: visible;
+}
+
+// /* Control the carousel container padding */
+.flickity-carousel-custom {
+  // left: -63.5rem !important;
+  // right: -63.5rem !important;
+}
+
+// /* Remove default Flickity viewport padding if any */
+// .flickity-carousel-custom .flickity-viewport {
+//   padding: 4rem !important;
+// }
+
+// /* Control spacing between slides - adjust margin-right as needed */
+// .flickity-carousel-custom .flickity-slider > * {
+//   margin-right: 1rem !important; /* Space between slides */
+// }
+
+// /* Remove margin from the last slide */
+// .flickity-carousel-custom .flickity-slider > *:last-child {
+//   margin-right: 0 !important;
+// }
+
+/* Counters */
+.odometer-inside {
+  display: flex;
+  direction: ltr;
+}
+
+.odometer-digit {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.odometer-digit-spacer {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.odometer-digit-inner {
+  text-align: left;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.odometer-ribbon {
+  display: block;
+  position: relative;
+  left: -0.03em;
+}
+
+.odometer-ribbon-inner {
+  display: block;
+  -webkit-backface-visibility: hidden;
+}
+.odometer-value {
+  display: block;
+  -webkit-transform: translateZ(0);
+}
+
+.odometer-value.odometer-last-value {
+  position: absolute;
+}
+
+.odometer-ribbon-inner {
+  -webkit-transition: -webkit-transform 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  -moz-transition: -moz-transform 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  -ms-transition: -ms-transform 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  -o-transition: -o-transform 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: transform 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.odometer-animating-up.odometer-animating .odometer-ribbon-inner {
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+.odometer-animating-down .odometer-ribbon-inner {
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+.odometer-animating-down.odometer-animating .odometer-ribbon-inner {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.animated_svg {
+  position: absolute;
+  width: 35em;
+  // z-index: -99;
+  pointer-events: none;
+}
+
+.shape_c {
+  left: 30%;
+  top: -10em;
+}
+
+.shape_a {
+  right: -10em;
+  top: -3em;
+}
+
+.shape_b {
+  left: 30em;
+  top: -12em;
+}
+
+.runner {
+  fill: none;
+  stroke: rgba(60, 26, 82, 0.2);
+  strokewidth: 1;
+  stroke-linecap: round; /* change to 'butt' if you prefer flat ends */
+  pointer-events: none;
+}
+
+._hide {
+  opacity: 0;
+}
+
+.circle_motion:not(.reversed) {
+  top: calc(100% - 2px);
+}
+
+.circle_motion.reversed {
+  bottom: calc(100% - 2px);
+  transform: scaleY(-1);
+}
+
+.circle_motion svg {
+  height: auto;
+  position: relative;
+  width: 100%;
+}
+
+.header_side .icon_button,
+.header_side .menu_button {
+  transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.scrolled .header_side .icon_button,
+.scrolled .header_side .menu_button {
+  width: 4em;
+}
+
+li {
+  list-style: none;
+}
+
+.stroke-canvas {
+  position: relative;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 95%;
+    height: 95%;
+
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+}
+
+.menu_button li,
+.menu_button ._open,
+.menu_button ._close {
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.menu_button.active li:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.menu_button.active li:nth-child(3) {
+  transform: rotate(-45deg) translate(0.25em, -0.3em);
+}
+
+.menu_button.active li:nth-child(1) {
+  opacity: 0;
+}
+
+._close {
+  position: absolute !important;
+  left: 0;
+  opacity: 0;
+}
+
+._open {
+  position: relative;
+}
+
+.menu_button.active ._open {
+  opacity: 0;
+}
+
+.menu_button.active ._close {
+  opacity: 1;
+}
+
+.fwd-page {
+  --primary: #0066ba !important;
+  --color-primary: #0066ba !important;
+  --color-text-primary-100: #0066ba !important;
+  --color-text-primary-80: #0066bacc !important;
+  --color-text-primary-60: #0066ba99 !important;
+  --color-text-primary-30: #0066ba4d !important;
+  --color-text-primary-15: #0066ba26 !important;
+  --color-text-primary-10: #0066ba1a !important;
+}
+
+.atelier-page {
+  --primary: #ffa38c !important;
+  --color-primary: #ffa38c !important;
+  --color-text-primary-100: #ffa38c !important;
+  --color-text-primary-80: rgba(255, 163, 140, 0.8) !important;
+  --color-text-primary-60: rgba(255, 163, 140, 0.6) !important;
+  --color-text-primary-30: rgba(255, 163, 140, 0.3) !important;
+  --color-text-primary-15: rgba(255, 163, 140, 0.15) !important;
+  --color-text-primary-10: rgba(255, 163, 140, 0.1) !important;
+}
+
+.pulse-page {
+  --primary: #ba0d2e !important;
+  --color-primary: #ba0d2e !important;
+  --color-text-primary-100: #ba0d2e !important;
+  --color-text-primary-80: rgba(186, 13, 46, 0.8) !important;
+  --color-text-primary-60: rgba(186, 13, 46, 0.6) !important;
+  --color-text-primary-30: rgba(186, 13, 46, 0.3) !important;
+  --color-text-primary-15: rgba(186, 13, 46, 0.15) !important;
+  --color-text-primary-10: rgba(186, 13, 46, 0.1) !important;
+}
+
+.sage-page {
+  --primary: #6b7866 !important;
+  --color-primary: #6b7866 !important;
+  --color-text-primary-100: #6b7866 !important;
+  --color-text-primary-80: rgba(107, 120, 102, 0.8) !important;
+  --color-text-primary-60: rgba(107, 120, 102, 0.6) !important;
+  --color-text-primary-30: rgba(107, 120, 102, 0.3) !important;
+  --color-text-primary-15: rgba(107, 120, 102, 0.15) !important;
+  --color-text-primary-10: rgba(107, 120, 102, 0.1) !important;
+}
+
+// Override GetInTouchSection colors for pages with primary color overrides
+.fwd-page,
+.atelier-page,
+.pulse-page,
+.sage-page {
+  .get_in_touch_section {
+    .text-text-primary-100 {
+      color: var(--primary) !important;
+    }
+    
+    [class*="border-text-primary-100"] {
+      border-color: color-mix(in srgb, var(--primary) 15%, transparent) !important;
+    }
+  }
+}
+
+.culture-card-clip {
+  clip-path: circle(100% at 94% 50%);
+  @media (max-width: 1024px) {
+    clip-path: ellipse(70% 100% at 50% 0%);
+  }
+}
+
+@keyframes scrollDown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scrollUp {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.infinite__rotate {
+  animation: infiniteRotate 10s linear infinite;
+}
+
+@keyframes infiniteRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+._y0 {
+  transform: translateY(0) !important;
+}

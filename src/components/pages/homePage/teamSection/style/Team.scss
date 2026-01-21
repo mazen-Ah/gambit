@@ -1,0 +1,35 @@
+.team_grid:hover .team_col:not(:hover) .tm_img {
+	filter: grayscale(1);
+}
+
+.tm_img {
+	transition: all .4s cubic-bezier(.22, .61, .36, 1);
+}
+
+.canvas-button {
+	& > *.icon-wrapper-fill {
+		position: relative;
+		z-index: 10;
+
+		&::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			border-radius: 9999px; // rounded-full
+			border: 1px solid #3c1a5250;
+			transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+			pointer-events: none;
+		}
+
+		&:hover::before {
+			opacity: 0;
+			transform: scale(1.25);
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.team_grid:hover .team_col:not(:hover) .tm_img {
+		filter: unset;
+	}
+}

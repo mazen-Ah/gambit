@@ -1,0 +1,143 @@
+html {
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+html,
+body,
+input,
+select,
+textarea {
+  font-family: var(--font-fellix);
+  font-weight: 400;
+  font-size: 0.834vw;
+  letter-spacing: -0.03125em;
+  line-height: 1;
+  // background: #ede3ee;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  font-weight: 500;
+  line-height: 1;
+}
+
+h1 {
+  font-size: 6.25rem;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+h2 {
+  font-size: 3.125rem;
+  line-height: 1.2;
+  letter-spacing: -0.1875rem;
+}
+
+h3 {
+  font-size: 2.625rem;
+  line-height: 1.25;
+  letter-spacing: -0.09375rem;
+}
+
+h4 {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  letter-spacing: -0.038em;
+}
+
+h5 {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  letter-spacing: -0.038em;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.48;
+  letter-spacing: -0.015625rem;
+
+  &.plus {
+    font-size: 1.3125rem;
+    line-height: 1.5;
+    letter-spacing: -0.015625rem;
+    font-weight: 500;
+  }
+}
+
+.body {
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: -0.03125rem;
+  font-weight: 400;
+  color: var(--color-text-primary-100);
+}
+
+.text-primary {
+  color: var(--color-text-primary-100);
+}
+
+.label {
+  font-size: 0.75rem;
+  line-height: 1;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  html,
+  body,
+  input,
+  select,
+  textarea {
+    font-size: 1.3vw;
+  }
+}
+
+@media (max-width: 600px) {
+  html,
+  body,
+  input,
+  select,
+  textarea {
+    font-size: 2.7vw;
+  }
+  h1 {
+    font-size: 4rem;
+    line-height: 1.17;
+    letter-spacing: -0.04rem;
+  }
+
+  h2 {
+    font-size: 2.45rem;
+    line-height: 1.25;
+    letter-spacing: -0.055em;
+  }
+
+  h3 {
+    font-size: 2.3rem;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.0625rem;
+  }
+}
+
+html,
+body {
+  overflow-x: hidden;
+}

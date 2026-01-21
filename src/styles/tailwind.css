@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --background: linear-gradient(180deg, #FFFFFF 0%, #EDE3EE 100%);
+  --foreground: #3C1A52;
+
+  --primary: #CF0F69;
+  --secondary: #EDE3EE;
+  --space-x: 5rem;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --space-x: 2rem;
+  }
+}
+
+@theme inline {
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1025px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-text-primary-100: #3C1A52;
+  --color-text-primary-80: #3C1A52CC;
+  --color-text-primary-60: #3C1A5299;
+  --color-text-primary-15: #3C1A5226;
+
+  --color-blue: #0066BA;
+  --color-blue-80: #0066BACC;
+  --color-blue-60: #0066BA99;
+
+  --color-green: #44A444;
+  --color-red: #BA0D2E;
+
+  --font-fellix-regular: "Fellix-Regular";
+  --font-fellix-medium: "Fellix-Medium";
+  --font-fellix-semi-bold: "Fellix-SemiBold";
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Prevent browser autofill from changing background colors */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #3C1A52;
+  transition: background-color 5000s ease-in-out 0s;
+  box-shadow: inset 0 0 20px 20px #ffffff00;
+  background-color: transparent !important;
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    /* For Webkit-based browsers (Chrome, Safari and Opera) */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* For IE, Edge and Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
