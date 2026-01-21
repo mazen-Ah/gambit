@@ -1,0 +1,12 @@
+{
+  "pages": {},
+  "app": {
+    "[project]/src/app/pulse/page": [
+      "static/media/Fellix_Regular-s.p.37f5577c.woff2",
+      "static/media/Fellix_Medium-s.p.c9f536fd.woff2",
+      "static/media/Fellix_SemiBold-s.p.b5388158.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pagesUsingSizeAdjust": false
+}

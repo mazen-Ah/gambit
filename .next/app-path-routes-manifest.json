@@ -1,0 +1,15 @@
+{
+  "/[division]/page": "/[division]",
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/about-us/page": "/about-us",
+  "/atelier/page": "/atelier",
+  "/awards/page": "/awards",
+  "/contact-us/page": "/contact-us",
+  "/fwd/page": "/fwd",
+  "/icon.png/route": "/icon.png",
+  "/page": "/",
+  "/players/page": "/players",
+  "/pulse/page": "/pulse",
+  "/sage/page": "/sage"
+}

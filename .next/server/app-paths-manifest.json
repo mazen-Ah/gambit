@@ -1,0 +1,15 @@
+{
+  "/[division]/page": "app/[division]/page.js",
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/about-us/page": "app/about-us/page.js",
+  "/atelier/page": "app/atelier/page.js",
+  "/awards/page": "app/awards/page.js",
+  "/contact-us/page": "app/contact-us/page.js",
+  "/fwd/page": "app/fwd/page.js",
+  "/icon.png/route": "app/icon.png/route.js",
+  "/page": "app/page.js",
+  "/players/page": "app/players/page.js",
+  "/pulse/page": "app/pulse/page.js",
+  "/sage/page": "app/sage/page.js"
+}
